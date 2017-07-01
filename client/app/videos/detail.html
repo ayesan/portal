@@ -1,0 +1,30 @@
+
+<div class="video-container__detail row" > 
+  <div class="left-panel col-lg-9 col-sm-12"> 
+    <video-gular controls="true" url="activeVideo.url"></video-gular> 
+    <div class="title-box"> 
+      <h1> {{ activeVideo.name }} </h1> 
+    </div> 
+    <rate-it is-read-only="false" ratings="activeVideo.ratings"></rate-it> 
+    <div class="description"> {{activeVideo.description}} </div> 
+  </div>
+  <div class="right-panel feed-panel col-lg-3 col-sm-12 panel panel-blur large-panel with-scroll"> 
+    <div class="panel-heading clearfix"> 
+      <h2 class="panel-title"> Videos </h2> 
+    </div> 
+    <div class="right-panel-scroll panel-body"> 
+      <div ng-click="showDetail(item)" class="feed-message" ng-repeat='item in videos.items'> 
+        <div class="message-icon"> 
+          <video-gular controls="false" url="item.url"></video-gular> 
+        </div> 
+        <div class="text-block text-message"> 
+          <span ng-click="showDetail(item)"> {{ item.name }} </span> 
+        </div> 
+      </div> 
+      <div> 
+        <button ng-click="videos.nextPage()" class="load-more-btn btn-info col-md-12 col-sm-12"> LOAD MORE</button> 
+      </div> 
+      <div ng-show='videos.busy'>Loading data...</div> 
+    </div> 
+  </div>
+</div>

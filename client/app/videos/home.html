@@ -1,0 +1,13 @@
+<div class="videos-container" infinite-scroll='videos.nextPage()' infinite-scroll-disabled='videos.busy'>
+  <div class="player-container">
+    <div class="player-items" ng-repeat='item in videos.items'>
+      <video-gular controls="true" url="item.url"></video-gular>
+      <div class="title-box">
+        <h1 ng-click="showDetail(item)"> {{ item.name }} </h1> 
+      </div> 
+      <rate-it is-read-only="true" ratings="item.ratings"></rate-it> 
+      <div class="description"> {{item.description}} </div> 
+    </div> 
+  </div>
+  <div ng-show='videos.busy'>Loading data...</div> 
+</div>

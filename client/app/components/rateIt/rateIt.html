@@ -1,0 +1,4 @@
+<div class="video-rating"> 
+  <ng-rate-it class="rate-stars" ng-model="aveRate" rated="ctrl.rateCallback" max="5" resetable="false" read-only="isReadOnly"> </ng-rate-it> 
+  <span class="rate-info"> Rating: {{aveRate | number:1}} out of 5 ({{rateLen}} votes) </span> 
+</div>
